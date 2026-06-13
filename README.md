@@ -1,2 +1,2 @@
 # DSA-Question-PYTHON-ver
-This Repo is the Python solutions to some classic data structure and algorithm problem 
+不管是leetcode还是newcode上对于经典的题目的解法都以及是优化到极致的版本,非常优美,但是很多时候会造成初学者压根看不懂,或者理解起来需要花很多时间去品鉴,这个仓库主要是作者本人自己初学的过程中用比较暴力直接的解法,看起来不太优美但是结构比较直白思路都是比较朴实无华的笨方法,希望可以帮到一些初学者朋友去尝试理解那些更高级的方法
