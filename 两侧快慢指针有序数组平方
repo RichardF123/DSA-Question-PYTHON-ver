@@ -1,0 +1,13 @@
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        ptr1 = 0
+        ptr2 = len(nums) - 1
+        ans = [0]*len(nums)
+        for p in range(len(nums) - 1, -1, -1):
+            if abs(nums[ptr1]) <= abs(nums[ptr2]):
+                ans[p] = nums[ptr2]**2
+                ptr2 = ptr2 - 1
+            else:
+                ans[p] = nums[ptr1]**2
+                ptr1 = ptr1 + 1
+        return ans
