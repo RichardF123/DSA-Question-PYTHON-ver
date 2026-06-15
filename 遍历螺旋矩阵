@@ -26,4 +26,4 @@ class Solution:
             ans[i] = matrix[startx][starty]
             vistied_position[startx][starty] = True
             startx, starty = startx + direction_matrix[direction_index][0], starty + direction_matrix[direction_index][1]
-        return an
+        return ans
