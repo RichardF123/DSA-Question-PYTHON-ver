@@ -1,0 +1,38 @@
+def main():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    index = 0
+    n, m = int(data[index]), int(data[index + 1])
+    index += 2
+    horizontal = [0] * n
+    vec = []
+    sum = 0
+    for i in range(n):
+        row = []
+        for j in range(m):
+            row.append(int(data[index]))
+            sum += int(data[index])
+            index += 1
+        vec.append(row)
+    horizontal = [0]*n
+    for i in range(n):
+        for j in range(m):
+            horizontal[i] += vec[i][j]
+    vertical = [0] * m
+    for j in range(m):
+        for i in range(n):
+            vertical[j] += vec[i][j]
+
+    results = float('inf')
+    horizontalcut = 0    
+    for i in range(n):
+        horizontalcut += horizontal[i]
+        results = min(results, abs((sum - 2*horizontalcut)))
+    verticalcut = 0
+    for j in range(m):
+        verticalcut += vertical[j]
+        results = min(results, abs((sum - 2*verticalcut)))
+    print(results)
+if __name__ == "__main__":
+    main()
