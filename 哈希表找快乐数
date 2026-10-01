@@ -1,0 +1,16 @@
+class Solution:
+    def getsum(self, n: int):
+        sum = 0
+        while n:
+            n, r = divmod(n, 10)
+            sum += r ** 2
+        return sum
+    def isHappy(self, n: int) -> bool:
+        s = set()
+        while self.getsum(n) != 1:
+            if self.getsum(n) in s:
+                return False
+            else:
+                s.add(self.getsum(n))
+                n = self.getsum(n)
+        return True
