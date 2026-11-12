@@ -1,0 +1,26 @@
+class Solution():
+    def subsititude(self, text):
+        count = sum(1 for x in text if x.isdigit())
+        new_lenth = len(text) + 5 * count
+        new = [""] * new_lenth
+        new_index = new_lenth - 1
+        old_index = len(text) - 1
+        while old_index >= 0:
+            if text[old_index].isdigit():
+                new[new_index-5: new_index + 1] = "number"
+                new_index = new_index - 6
+                old_index -= 1
+            else:
+                new[new_index] = text[old_index]
+                old_index -=1
+                new_index -=1
+        return ''.join(new)
+if __name__ == "__main__":
+    solution = Solution()
+    while True:
+        try:
+            s = input()
+            ans = solution.subsititude(s)
+            print(ans)
+        except Exception:
+            break
